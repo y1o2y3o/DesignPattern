@@ -1,0 +1,25 @@
+@startuml
+
+abstract class Subject{
+    observers: Observer
+    addObserver(observer: Observer): void
+    deleteObserver(observer: Observer): void
+    notifyObservers(): void
+    {method} getSubjectStatus
+}
+interface Observer {
+    {method} update
+}
+
+class ConcreteSubject{
+    {method} getSubjectStatus
+}
+
+class ConcreteObserver{
+    {method} update
+}
+
+Observer <|..ConcreteObserver
+Subject <|--ConcreteSubject
+Observer <-o Subject: notifies
+@enduml

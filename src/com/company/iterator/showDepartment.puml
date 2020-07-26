@@ -1,0 +1,31 @@
+@startuml
+
+interface Iterator {
+    hasNext():boolean
+    next():E
+    remove():void
+}
+
+class ComputerCollegeIterator
+class InfoCollegeIterator
+
+interface College {
+    createIterator():Iterator
+}
+
+class ComputerCollege
+class InfoCollege
+
+College <|.. ComputerCollege
+College <|.. InfoCollege
+ComputerCollegeIterator <-- ComputerCollege
+InfoCollegeIterator <-- InfoCollege
+Iterator <|.. ComputerCollegeIterator
+Iterator <|.. InfoCollegeIterator
+
+class Department
+ComputerCollege o-- Department
+InfoCollege o-- Department
+ComputerCollegeIterator o-- Department
+InfoCollegeIterator o-- Department
+@enduml
