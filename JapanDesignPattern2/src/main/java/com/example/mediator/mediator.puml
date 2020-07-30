@@ -1,0 +1,39 @@
+@startuml
+
+interface Mediator{
+    {method} createColleagues
+    {method} colleagueChanged
+}
+
+interface Colleague{
+    mediator
+    {method} setMediator
+    {method} controlColleague
+}
+
+class ConcreteMediator implements Mediator{
+    controlColleague1
+    controlColleague2
+    controlColleague3
+    {method} createColleagues
+    {method} colleagueChanged
+}
+
+class ConcreteColleague1 implements Colleague{
+    {method} controlColleague
+}
+
+class ConcreteColleague2 implements Colleague{
+    {method} controlColleague
+}
+
+class ConcreteColleague3 implements Colleague{
+    {method} controlColleague
+}
+
+ConcreteMediator o--> ConcreteColleague1
+ConcreteMediator o--> ConcreteColleague2
+ConcreteMediator o--> ConcreteColleague3
+Colleague o-> Mediator
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+
+class Client
+
+interface Handler{
+    next
+    {method} request
+}
+Client ->Handler:request
+Handler o-->Handler
+class ConcreteHandler1 implements Handler{
+    {method} request
+}
+
+class ConcreteHandler2 implements Handler{
+    {method} request
+}
+@enduml

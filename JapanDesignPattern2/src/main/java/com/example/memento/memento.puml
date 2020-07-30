@@ -1,0 +1,16 @@
+@startuml
+
+class Caretaker
+class Originator{
+    {method} createMemento
+    {method} restoreMemento
+}
+class Memento{
+    {method} ~getProtectedInfo
+    {method} +getPublicInfo
+}
+
+Caretaker -> Originator:requests
+Originator --> Memento: create
+Caretaker o-->Memento
+@enduml

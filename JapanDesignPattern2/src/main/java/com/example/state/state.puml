@@ -1,0 +1,33 @@
+@startuml
+
+class Context{
+    state
+    {method} requestX
+    {method} requestY
+    {method} requestZ
+}
+
+Context o->State
+
+interface State{
+    {method} methodA
+    {method} methodB
+    {method} methodC
+    {method} methodD
+}
+
+class ConcreteState1 implements State{
+    {method} methodA
+    {method} methodB
+    {method} methodC
+    {method} methodD
+}
+
+class ConcreteState2 implements State{
+    {method} methodA
+    {method} methodB
+    {method} methodC
+    {method} methodD
+}
+
+@enduml
